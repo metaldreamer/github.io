@@ -257,6 +257,194 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://metaldreamer.github.io/2015/08/21/new/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="metaldreamer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/butters.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大栖岩乌鸫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/08/21/new/" itemprop="url">
+                  welcome to my blog
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-21T14:15:16+08:00">
+                2015-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/08/21/new/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/21/new/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>异常：<br>&emsp;&emsp;是对问题的描述，将问题进行对象的封装。</p>
+<hr>
+<p>异常的体系：<br>&emsp;&emsp;Throwable<br>&emsp;&emsp;&emsp;&emsp;|–Error<br>&emsp;&emsp;&emsp;&emsp;|–Exception<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|–RunTimeException<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|–…</p>
+<p>异常体系的特点：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;异常体系中的所有类以及建立的对象都可以被throw<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;和thorws关键字所操作。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;只有异常体系具备这个特点。</p>
+<hr>
+<p>throw和throws的用法<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;throw：定义在函数内，用于抛出异常对象。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;throws：定义在函数上，用于抛出异常类，可以抛出多个。</p>
+<p>当函数内容有throw抛出的异常对象，并未进行try处理。必须要在函数上声明，否则编译失败。（RunTimeExcption除外）<br>函数类抛出RunTimeException异常对象，函数上不用声明。</p>
+<hr>
+<p>如果函数声明了异常，调用者要进行处理，处理方法可以throws可以try。</p>
+<p>异常分两种：<br>&emsp;&emsp;&emsp;&emsp;1、编译时被检测异常<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;该异常在编译时，如果没有处理（没有throw也没有try），编译失败。<br>&emsp;&emsp;&emsp;&emsp;2、运行时异常（编译时不检测）<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;在编译时，不需要处理，编译器不检查。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;该异常发生时，建议不处理，让程序停止，需要对代码进行修正.</p>
+<hr>
+<p>异常处理语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span></div><div class="line">&#123;</div><div class="line">     需要被检测的代码</div><div class="line">&#125;</div><div class="line"><span class="keyword">catch</span>(Exception e)</div><div class="line">&#123;</div><div class="line">     处理异常的代码</div><div class="line">&#125;</div><div class="line"><span class="keyword">finally</span></div><div class="line">&#123;</div><div class="line">     一定会执行的代码</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：<br>&emsp;&emsp;1、finally中定义的通常是： 关闭资源代码。因为资源必须释放。<br>&emsp;&emsp;2、finally只有一种情况不会执行。当执行到System.exit(0)；finally不会执行。</p>
+<hr>
+<p>自定义异常：<br>&emsp;&emsp;&emsp;&emsp;定义类继承Exception或者RunTimeException<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1、为了让该自定义类具备可抛性。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2、让该类具备操作异常的共性方法。</p>
+<pre><code>当要定义自定义异常信息时，可以使用父类已经定义好的功能。
+将异常信息传递给父类的构造函数。
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span></div><div class="line">&#123;</div><div class="line">     MyException(String message)</div><div class="line">     &#123;</div><div class="line">          <span class="keyword">super</span>(message);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>自定义异常：按照java 的面向对象思想，将程序出现的特有问题进行封装。</p>
+<hr>
+<p>异常的好处：<br>&emsp;&emsp;1、将问题进行封装。<br>&emsp;&emsp;2、将正常流程代码和问题处理代码进行相互分离，方便阅读。</p>
+<p>异常的处理原则：<br>&emsp;&emsp;1、处理方式有两种：try和throws。<br>&emsp;&emsp;2、调用到抛出异常的功能时，抛出几个，就处理几个。一个try对应多个catch。<br>&emsp;&emsp;3、多个catch，父类的catch放到最下面。<br>&emsp;&emsp;4、catch内，需要定义针对性的处理方式，不要简单定义printStackTrace，输入语句，也不要不写。</p>
+<p>当捕捉到异常，本功能处理不了时，可以继续在catch中抛出。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">     <span class="keyword">throw</span> <span class="keyword">new</span> AException();</div><div class="line">     </div><div class="line">&#125;<span class="keyword">catch</span>(AException e)</div><div class="line">&#123;</div><div class="line">     <span class="keyword">throw</span> e;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果异常处理不了，但并不属于该功能出现的异常。<br>可以将异常转换后，再抛出和该功能相关的异常。</p>
+<p>或者异常可以处理，当需要将异常产生和本功能相关的问题提供出去，<br>让调用者知道，并处理。也可以将捕获异常处理后，转换新的异常。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span></div><div class="line">&#123;</div><div class="line">     <span class="keyword">throw</span> <span class="keyword">new</span> AException();</div><div class="line">&#125;</div><div class="line"><span class="keyword">catch</span>(AException e)</div><div class="line">&#123;</div><div class="line">     <span class="comment">//对AEception处理</span></div><div class="line">     <span class="keyword">throw</span> <span class="keyword">new</span> BException();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>异常的注意事项：<br>&emsp;&emsp;在子父类覆盖时：<br>&emsp;&emsp;&emsp;&emsp;1、子类抛出的异常必须是父类的异常的子类或者子集。<br>&emsp;&emsp;&emsp;&emsp;2、如果父类或者接口没有异常抛出时，子类覆盖出现异常，只能try不能throw。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://metaldreamer.github.io/2015/03/21/welcome-to-my-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -458,7 +646,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -467,7 +655,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -476,7 +664,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -517,7 +705,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
